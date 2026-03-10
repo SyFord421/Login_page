@@ -8,9 +8,19 @@ sys = LoginSystem()
 def home():
     return render_template('index.html')
 
+@app.route('/register', methods=['POST'])
+def register():
+    user = request.form.get('username')
+    email = request.form.get('Email')
+    password = request.form.get('password')
+    result = sys.register(user, email, password)
+    return result
+
 @app.route('/login', methods=['POST'])
 def login():
     user = request.form.get('username')
     pw = request.form.get('password')
     result = sys.login(user, pw)
+    return result
+    
     

@@ -1,3 +1,6 @@
+AUTHOR:
+--SyFord
+* --Ya ini sangat mudah karena di bantu oleh ai--
 # 🛡️ Simple Web Login System with Flask & SQLite
 
 Sistem login dan registrasi sederhana yang dibangun menggunakan **Python (Flask)** sebagai backend, **SQLite** sebagai database, dan **HTML/CSS** untuk antarmuka pengguna. Project ini menggunakan konsep Pemrograman Berorientasi Objek (OOP) dan keamanan hashing password.
@@ -19,9 +22,11 @@ Sistem login dan registrasi sederhana yang dibangun menggunakan **Python (Flask)
 .
 ├── app/
 │   ├── database_manager.py  # Logic manajemen SQLite
-│   └── system.py            # Logic Hashing & User Account
+│   └── system.py      # Logic Hashing & User Account
 ├── templates/
-│   ├── login.html           # UI Halaman Login
-│   └── register.html        # UI Halaman Register
-├── main.py                  # Entry point CLI
-└── main.py               # Entry point Web (Flask)
+│   ├── login.html     # UI Halaman Login
+│   └── register.html  # UI Halaman Register
+|
+└── main.py            # Entry point Web (Flask)
+
+'''

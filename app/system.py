@@ -10,7 +10,7 @@ class UserAccount:
             salt = "HeI_AnTeK_AnTeK_AsIng"
             #masih static Salt soalnya nggak mau ribet
             salted = salt + password
-        return hashlib.sha256(salted.encode()).hexdigest()
+        return hashlib.sha256(salted.encode()).hexdigest()#kita gunakan sha256 standar industri sekarang
         
     def __init__(self, username, password):
         self.username = username
@@ -34,7 +34,7 @@ class LoginSystem(UserAccount):
         hashed_pw = self._hash_password(pw)
         query = "SELECT password FROM users WHERE username = ?"
         self.db.cursor.execute(query, (usr,))
-        data = self.db.cursor.fetchone() 
+        data = self.db.cursor.fetchone()#mengambil data dari database 
         if data:
             stored_pw = data[0]
             if stored_pw == hashed_pw:

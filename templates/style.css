@@ -1,17 +1,18 @@
 body {
     box-shadow: midnightblue;
-    background: #6c78c2;
-    font-family: Sans-Serif;
+    background: #250b58;
+    font-family: initial;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60vh;
 }
 .card {
-    background: white;
+    background: #111531;
     padding: 3rem;
     border-radius: 30px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(1,0,0,0.1);
     width: 300px;
     text-align: center; 
     
@@ -24,7 +25,7 @@ input {
     border-radius: 10px;
     }
 button {
-    background: #6c5ce7;
+    background: #5916dd;
     color: white;
     border: none;
     padding: 10px 20px;
