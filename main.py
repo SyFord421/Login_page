@@ -17,7 +17,7 @@ def register_page():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        user = request.form.get('username')
+        user = request.form.get('username').lower()
         pw = request.form.get('password')
         return sys.login(user, pw)
     return render_template('login.html')
@@ -25,8 +25,8 @@ def login():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        user = request.form.get('username')
-        email = request.form.get('email')
+        user = request.form.get('username').lower()
+        email = request.form.get('email').lower()
         password = request.form.get('password')
         return sys.register(user, email, password)
     return render_template('register.html')
