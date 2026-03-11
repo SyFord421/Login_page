@@ -15,7 +15,6 @@ class UserAccount:
     def __init__(self, username, password):
         self.username = username
         self._password = password
-        
         #Encapsulation.
         
 class LoginSystem(UserAccount):
@@ -23,9 +22,9 @@ class LoginSystem(UserAccount):
     def __init__(self):
         self.db = DatabaseManager()
 
-    def register(self, usr, pw, email):
+    def register(self, usr, email, pw):
         hashed_pw = self._hash_password(pw)
-        if self.db.save_user(usr, hashed_pw):
+        if self.db.save_user(usr, email, hashed_pw):
             return f"Username {usr} Telah Di Daftarkan ke Database"
         else:
             return f"Gagal daftar, mungkin nama {usr} udah ada."

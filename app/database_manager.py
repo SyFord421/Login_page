@@ -12,15 +12,14 @@ class DatabaseManager:
             with self.conn:
                 self.cursor.execute(query, params)
         except sqlite3.Error as e:
-            print(f"[E] Error: {e}")
-        
+            print (e)
     
     def db_init(self):
         query = """
         CREATE TABLE IF NOT EXISTS users(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         username TEXT UNIQUE,
-        password TEXT
+        password TEXT,
         email TEXT UNIQUE)"""
         try:
             self.execute_query(query)
@@ -28,10 +27,9 @@ class DatabaseManager:
         except sqlite3.OperationalError:
             return False 
     
-    def save_user(self, usr, pw, email):
+    def save_user(self, usr, email, pw):
         query = """INSERT INTO users(username, password, email) VALUES (?, ?, ?)"""
-        self.execute_query(query, (usr, pw, email))
-        print("Berhasil menambahkan")
+        self.execute_query(query, (usr, email, pw))
         
 if __name__ == "__main__":
     pass
