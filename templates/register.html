@@ -2,6 +2,8 @@
 <html>
     <head>
         <title>Register</title>
+        <meta charset="UTF-8">
+        <meta name= "viewport" content="width=device-width">
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
     </head>
@@ -12,7 +14,8 @@
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="text" name="email" placeholder="Masukan Alamat Email" required>
                 <input type="password" name="password" placeholder="Password" required>
-
+                <p> Berapa Hasil dari {{n1}} + {{n2}}?</p>
+                <input type="number" name="user_answer" placeholder="ISI DISINI" required>
                 <button type="submit">Daftar</button>
             </form>
             <p>Sudah Punya Akun <a href="/login">Login Di sini</a></p>
