@@ -1,24 +1,38 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Register</title>
-        <meta charset="UTF-8">
-        <meta name= "viewport" content="width=device-width">
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-    </head>
-    <body>
-        <div class="card">
-            <h2> Register </h2>
-            <form action="{{url_for('register')}}" method="POST">
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="text" name="email" placeholder="Masukan Alamat Email" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <p> Berapa Hasil dari {{n1}} + {{n2}}?</p>
-                <input type="number" name="user_answer" placeholder="ISI DISINI" required>
-                <button type="submit">Daftar</button>
-            </form>
-            <p>Sudah Punya Akun <a href="/login">Login Di sini</a></p>
-        </div>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Neubrutalism</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <form action="register" method="POST" class="form">
+            <div class="header">Sign Up</div>
+            
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Enter username" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="Enter Email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter password" required>
+            </div>
+            <div class="captcha-box">
+                <p class="captcha-text">Berapa hasil dari: {{ n1 }} + {{ n2 }}?</p>
+                <input type="number" name="user_answer" placeholder="Jawab di sini..." required>
+            </div>
+            <button type="submit" class="sigin-btn">Submit</button>
+            
+            <p class="signup-link">
+                Don't have an account? <a href="/login">Sign up</a>
+            </p>
+        </form>
+    </div>
+</body>
 </html>

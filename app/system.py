@@ -55,7 +55,8 @@ class LoginSystem(UserAccount):
         if data:
             stored_pw = data[0]
             if bcrypt.checkpw(pw.encode('utf-8'), stored_pw.encode('utf-8')):
-                return f"[*] Selamat datang {usr}"
+                return "Hallo Sayang isinya Kosong nih...."
+                
             else:
                 return "[!]Password salah."
         else:

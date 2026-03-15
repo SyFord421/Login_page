@@ -23,6 +23,7 @@ def login():
     return render_template('login.html')
     
 @app.route('/register', methods=['GET', 'POST'])
+
 def register():
     if request.method == 'POST':
         user_answer = request.form.get('user_answer')
@@ -37,7 +38,6 @@ def register():
     session['captcha_result'] = num1 + num2
     return render_template('register.html', n1=num1, n2=num2)
 
-    
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=5000)
 
